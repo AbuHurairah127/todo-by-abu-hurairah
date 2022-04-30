@@ -22,9 +22,9 @@ const Header = () => {
           <AiOutlineSearch />
         </div>
       </div>
-      <div className="right text-white text-3xl mx-5 cursor-pointer hover:text-indigo-700 hover:bg-white rounded-full transition delay-50 ease-in-out">
+      <div className="right text-white text-3xl mx-5 cursor-pointer hover:text-indigo-700  hover:bg-white rounded-full transition delay-50 ease-in-out">
         <a href="/">
-          <RiAccountCircleFill />
+          <RiAccountCircleFill className="border-none outline-none"></RiAccountCircleFill>
         </a>
       </div>
     </div>
