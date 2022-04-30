@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
 const Header = () => {
   return (
-    <div className="h-12 bg-indigo-500 w-full flex items-center justify-between">
+    <div className="h-12 bg-indigo-500 w-full flex shrink-0 items-center justify-between">
       <div className="left mx-8">
         <a
           href="/"
