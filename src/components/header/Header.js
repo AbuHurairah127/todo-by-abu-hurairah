@@ -23,7 +23,7 @@ const Header = () => {
         </div>
       </div>
       <div className="right text-white text-3xl mx-5 cursor-pointer hover:text-indigo-700 hover:bg-white rounded-full transition delay-50 ease-in-out">
-        <a href="">
+        <a href="/">
           <RiAccountCircleFill />
         </a>
       </div>

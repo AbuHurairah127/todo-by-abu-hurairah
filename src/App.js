@@ -1,13 +1,9 @@
 import React from "react";
-import Button from "./components/button/Button";
-import Header from "./components/header/Header";
+import Routing from "./routing/Routing";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="m-4">
-        <Button />
-      </div>
+      <Routing />
     </div>
   );
 }
