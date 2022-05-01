@@ -1,5 +1,5 @@
 import React from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FiMenu } from "react-icons/fi";
 import UseDayDetails from "./UseDayDetails";
 
 const DayDetails = () => {
@@ -7,7 +7,7 @@ const DayDetails = () => {
   return (
     <div className="m-2 mx-4">
       <div className="left">
-        <GiHamburgerMenu className="inline text-2xl relative cursor-pointer bottom-1"></GiHamburgerMenu>
+        <FiMenu className="inline text-2xl relative cursor-pointer bottom-1"></FiMenu>
         <h3 className="inline mx-2 text-2xl text-[#331e36]">MY DAY</h3>
         <div className="text-slate-400 mx-8">
           <span className="pr-1"> {day}, </span>
