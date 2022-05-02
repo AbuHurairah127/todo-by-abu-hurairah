@@ -4,7 +4,7 @@ import UseFooter from "./UseFooter";
 const Footer = () => {
   const { year } = UseFooter();
   return (
-    <div className="justify-center w-screen flex-grow flex-shrink-0 flex items-center h-12 bg-indigo-500">
+    <div className="z-0 justify-center w-screen flex-grow flex-shrink-0 flex items-center h-12 bg-indigo-600">
       <span className="text-white px-2">
         &copy; {year} All rights reserved.
       </span>

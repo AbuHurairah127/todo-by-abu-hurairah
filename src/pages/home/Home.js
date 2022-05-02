@@ -4,6 +4,7 @@ import DayDetails from "../../components/dayDetails/DayDetails";
 import Header from "../../components/header/Header";
 import TodoList from "../../components/todoList/TodoList";
 import AddTodo from "../../components/addTodo/AddTodo";
+import Footer from "../../components/footer/Footer";
 const Home = () => {
   return (
     <div className="flex w-full flex-col h-screen content-center">
@@ -14,7 +15,9 @@ const Home = () => {
       </div>
       <AddTodo />
       <TodoList />
-      <div className="mt-auto"></div>
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 };

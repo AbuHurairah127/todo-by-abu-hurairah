@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "../button/Button";
+import { useState } from "react";
 import { BsCalendarMonth, BsBell, BsArrowRepeat } from "react-icons/bs";
 
 const AddTodo = () => {
+  const [isUpdate, setIsUpdate] = useState(false);
   return (
     <div className="flex align-center justify-center bg-slate-200 flex-col px-4 py-3 mt-4 mx-6 rounded-md">
       <input
@@ -25,9 +27,15 @@ const AddTodo = () => {
             title="Repeat"
           ></BsArrowRepeat>
         </div>
-        <div className="self-end mt-2">
-          <Button label="Add" />
-        </div>
+        {isUpdate ? (
+          <div className="self-end mt-2">
+            <Button label="Update" />
+          </div>
+        ) : (
+          <div className="self-end mt-2">
+            <Button label="Add" />
+          </div>
+        )}
       </div>
     </div>
   );

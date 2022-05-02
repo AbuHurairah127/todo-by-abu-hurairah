@@ -6,7 +6,7 @@ const TodoList = () => {
       <div className="mx-3 ">
         <input
           type="checkbox"
-          className=" cursor-pointer scale-110"
+          className="h-3.5 w-3.5 cursor-pointer"
           title="Completed"
           name="taskCompleted"
           id="completed"

@@ -34,10 +34,18 @@ const UseDayDetails = () => {
   const [day, setDay] = useState(today);
   const [date, setDate] = useState(toDate);
   const [month, setMonth] = useState(toMonth);
+  const [isSideBar, setIsSideBar] = useState(false);
+  const sideBarToggler = () => {
+    setIsSideBar(!isSideBar);
+    console.log("Button Clicked");
+    console.log(isSideBar);
+  };
   return {
     day,
     date,
     month,
+    isSideBar,
+    sideBarToggler,
   };
 };
 
