@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../../components/button/Button";
 import DayDetails from "../../components/dayDetails/DayDetails";
-import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-
+import TodoList from "../../components/todoList/TodoList";
+import AddTodo from "../../components/addTodo/AddTodo";
 const Home = () => {
   return (
     <div className="flex w-full flex-col h-screen content-center">
@@ -12,9 +12,9 @@ const Home = () => {
       <div className="block mx-auto">
         <Button label="Add a TASK" />
       </div>
-      <div className="mt-auto">
-        <Footer className="" />
-      </div>
+      <AddTodo />
+      <TodoList />
+      <div className="mt-auto"></div>
     </div>
   );
 };

@@ -13,15 +13,15 @@ const AddTodo = () => {
       <div className="flex justify-between flex-row items-center">
         <div className="text-2xl cursor-pointer mt-2">
           <BsCalendarMonth
-            className="inline p-0.5 rounded-sm hover:border-2 hover:border-slate-300 hover:bg-slate-300"
+            className="inline p-0.5 rounded-sm hover:fill-blue-600"
             title="Add a due date"
           ></BsCalendarMonth>
           <BsBell
-            className="inline ml-4 p-0.5 rounded-sm hover:border-2 hover:border-slate-300 hover:bg-slate-300"
+            className="inline ml-4 p-0.5 rounded-sm hover:fill-blue-600"
             title="Remind me"
           ></BsBell>
           <BsArrowRepeat
-            className="inline ml-4 p-0.5 rounded-sm hover:border-2 hover:border-slate-300 hover:bg-slate-300"
+            className="inline ml-4 p-0.5 rounded-sm hover:fill-blue-600"
             title="Repeat"
           ></BsArrowRepeat>
         </div>
