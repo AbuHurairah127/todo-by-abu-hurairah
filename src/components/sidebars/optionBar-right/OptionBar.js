@@ -16,9 +16,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { useState } from "react";
-const OptionBar = () => {
-  const [favourite, setFavourite] = useState(true);
-  const [additionToMyDay, setadditionToMyDay] = useState(false);
+const OptionBar = (props) => {
   return (
     <div className=" w-1/3 h-screen fixed right-0 top-0 bg-slate-200 mt-12">
       <div>
@@ -32,34 +30,28 @@ const OptionBar = () => {
           <span className="text-lg tracking-wide cursor-none font-medium">
             Abu Hurairah
           </span>
-          {favourite ? (
-            <BsStarFill
-              color="#2563eb"
-              className="mx-2 cursor-pointer inline"
-            ></BsStarFill>
-          ) : (
-            <BsStar className="mx-2 cursor-pointer inline"></BsStar>
-          )}
+          <BsStarFill
+            color="#2563eb"
+            className="mx-2 cursor-pointer stroke-1 inline"
+          ></BsStarFill>
+          {/* <BsStar className="mx-2 cursor-pointer inline"></BsStar> */}
         </div>
-        {additionToMyDay ? (
-          <div className="flex flex-row justify-between items-center bg-white mx-3 hover:bg-slate-50 cursor-pointer py-4 mb-3">
-            <div>
-              <BsSun className="inline mx-2" color="#2563eb" />
-              <span className="text-blue-600 mx-3">Added to My Day</span>
-            </div>
-            <AiOutlineCloseCircle
-              className="inline mx-2"
-              title="Remove from My Day"
-              size="20px"
-              color="#2563eb"
-            />
-          </div>
-        ) : (
-          <div className="bg-white mx-3 cursor-pointer py-4 mb-3">
+        {/* <div className="flex flex-row justify-between items-center bg-white mx-3 hover:bg-slate-50 cursor-pointer py-4 mb-3">
+          <div>
             <BsSun className="inline mx-2" color="#2563eb" />
-            <span className="text-blue-600 mx-3">Add to My Day</span>
+            <span className="text-blue-600 mx-3">Added to My Day</span>
           </div>
-        )}
+          <AiOutlineCloseCircle
+            className="inline mx-2"
+            title="Remove from My Day"
+            size="20px"
+            color="#2563eb"
+          />
+        </div> */}
+        <div className="bg-white mx-3 cursor-pointer py-4 mb-3">
+          <BsSun className="inline mx-2" color="#2563eb" />
+          <span className="text-blue-600 mx-3">Add to My Day</span>
+        </div>
         <div className="bg-white mx-3 mb-3">
           <div className="py-4  hover:bg-slate-50 border cursor-pointer ">
             <BsBell className="inline mx-2" />
@@ -94,8 +86,16 @@ const OptionBar = () => {
         </div>
       </div>
       <div className="optionBarFooter flex flex-row items-center justify-between fixed bottom-2 px-5 w-1/3">
-        <IoExitOutline color="#000" className="cursor-pointer" size="24px" />
-        <AiOutlineDelete size="24px" className="cursor-pointer" />
+        <IoExitOutline
+          color="#000"
+          className="cursor-pointer hover:stroke-blue-700"
+          size="24px"
+          onClick={props.optionBarToggler}
+        />
+        <AiOutlineDelete
+          size="24px"
+          className="cursor-pointer hover:fill-red-600"
+        />
       </div>
     </div>
   );

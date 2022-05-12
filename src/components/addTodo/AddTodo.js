@@ -3,10 +3,10 @@ import Button from "../button/Button";
 import { useState } from "react";
 import { BsCalendarMonth, BsBell, BsArrowRepeat } from "react-icons/bs";
 
-const AddTodo = () => {
+const AddTodo = (props) => {
   const [isUpdate, setIsUpdate] = useState(false);
   return (
-    <div className="flex align-center justify-center bg-slate-200 flex-col px-4 py-3 mt-4 mx-6 rounded-md">
+    <div className="flex align-center justify-center bg-slate-200 flex-col px-4 py-3  mx-6 rounded-md">
       <input
         type="text"
         placeholder="Add a task"
@@ -29,11 +29,11 @@ const AddTodo = () => {
         </div>
         {isUpdate ? (
           <div className="self-end mt-2">
-            <Button label="Update" />
+            <Button label="Update" todoModal={props.todoModal} />
           </div>
         ) : (
           <div className="self-end mt-2">
-            <Button label="Add" />
+            <Button label="Add" todoModal={props.todoModal} />
           </div>
         )}
       </div>
