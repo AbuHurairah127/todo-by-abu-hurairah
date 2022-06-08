@@ -8,7 +8,11 @@ import Footer from "../../components/footer/Footer";
 import OptionBar from "../../components/sidebars/optionBar-right/OptionBar";
 import Navbar from "../../components/sidebars/navbar-left/Navbar";
 import UseHome from "./UseHome";
+import { useSelector } from "react-redux";
+
 const Home = () => {
+  const todos = useSelector((store) => store.todoReducer.todos);
+
   const {
     isNavbarAppear,
     navbarToggler,
@@ -34,7 +38,9 @@ const Home = () => {
       )}
 
       {isNavbarAppear && <Navbar toggler={navbarToggler} />}
-      <TodoList optionBarToggler={optionBarToggler} />
+      {todos.map((item) => (
+        <TodoList item={item.title} />
+      ))}
       {isOptionBarAppear && <OptionBar optionBarToggler={optionBarToggler} />}
       <div className="mt-auto">
         <Footer />

@@ -18,7 +18,7 @@ const TodoList = (props) => {
               onClick={props.optionBarToggler}
               className="hover:underline underline-offset-2"
             >
-              Abu Hurairah
+              {props.item}
             </span>
           </div>
         </div>
