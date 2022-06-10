@@ -9,20 +9,17 @@ let initialState = {
     {
       title: "Abu hurairah",
     },
-    {
-      title: "Asifa Rizwan",
-    },
-    {
-      title: "Fatima Rasheed",
-    },
-    {
-      title: "Hafsa Noor",
-    },
   ],
 };
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_TODO: {
+      let newTodos = [...state.todos, action.payload];
+      return {
+        todos: newTodos,
+      };
+    }
     default:
       return state;
   }

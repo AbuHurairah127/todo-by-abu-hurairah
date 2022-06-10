@@ -1,15 +1,20 @@
 import React from "react";
 import Button from "../button/Button";
-import { useState } from "react";
 import { BsCalendarMonth, BsBell, BsArrowRepeat } from "react-icons/bs";
+import UseAddTodo from "./UseAddTodo";
 
 const AddTodo = (props) => {
-  const [isUpdate, setIsUpdate] = useState(false);
+  //Props Destructuring
+  const { todoModal } = props;
+  const { todo, handleChange, isUpdate, onSubmitHandler } = UseAddTodo();
   return (
     <div className="flex align-center justify-center bg-slate-200 flex-col px-4 py-3  mx-6 rounded-md">
       <input
         type="text"
         placeholder="Add a task"
+        name="title"
+        value={todo.title}
+        onChange={(e) => handleChange(e)}
         className="p-2 border-b-2 border-b-indigo-800 w-[75] focus:outline-none"
       />
       <div className="flex justify-between flex-row items-center">
@@ -29,11 +34,22 @@ const AddTodo = (props) => {
         </div>
         {isUpdate ? (
           <div className="self-end mt-2">
-            <Button label="Update" todoModal={props.todoModal} />
+            <Button
+              label="Update"
+              event={(e) => {
+                todoModal();
+              }}
+            />
           </div>
         ) : (
           <div className="self-end mt-2">
-            <Button label="Add" todoModal={props.todoModal} />
+            <Button
+              label="Add"
+              event={(e) => {
+                onSubmitHandler(e);
+                todoModal();
+              }}
+            />
           </div>
         )}
       </div>

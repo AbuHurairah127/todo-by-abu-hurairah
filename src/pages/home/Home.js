@@ -31,15 +31,15 @@ const Home = () => {
       <div className="border-b-[1px] w-1/2 my-4 border-indigo-600 mx-auto "></div>
       {isTodoButton ? (
         <div className="mx-auto">
-          <Button label="Add a TASK" todoModal={todoModalLauncher} />
+          <Button label="Add a TASK" event={todoModalLauncher} />
         </div>
       ) : (
         <AddTodo todoModal={todoModalLauncher} />
       )}
 
       {isNavbarAppear && <Navbar toggler={navbarToggler} />}
-      {todos.map((item) => (
-        <TodoList item={item.title} />
+      {todos.map((item, index) => (
+        <TodoList key={index} item={item.title} />
       ))}
       {isOptionBarAppear && <OptionBar optionBarToggler={optionBarToggler} />}
       <div className="mt-auto">
