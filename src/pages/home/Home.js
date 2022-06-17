@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const todos = useSelector((store) => store.todoReducer.todos);
+  const rightBarFlag = useSelector((store) => store.todoReducer.rightBarFlag);
 
   const {
     isNavbarAppear,
@@ -21,6 +22,7 @@ const Home = () => {
     isTodoButton,
     todoModalLauncher,
   } = UseHome();
+
   return (
     <div className="flex w-full flex-col h-screen content-center">
       <Header />
@@ -39,9 +41,9 @@ const Home = () => {
 
       {isNavbarAppear && <Navbar toggler={navbarToggler} />}
       {todos.map((item, index) => (
-        <TodoList key={index} item={item.title} />
+        <TodoList key={index} item={item} />
       ))}
-      {isOptionBarAppear && <OptionBar optionBarToggler={optionBarToggler} />}
+      {rightBarFlag && <OptionBar />}
       <div className="mt-auto">
         <Footer />
       </div>

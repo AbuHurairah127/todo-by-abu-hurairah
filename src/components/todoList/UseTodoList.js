@@ -1,16 +1,16 @@
-import React from "react";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { readTodo, deleteTodo } from "../../store/actions/todoActions";
 
-const UseTodoList = () => {
-  const [isSideBarToggle, setIsSideBarToggle] = useState(true);
-  const rightSideBarToggler = () => {
-    setIsSideBarToggle(!isSideBarToggle);
+export default function UseTodoList() {
+  const dispatch = useDispatch();
+  const handleRead = (item) => {
+    dispatch(readTodo(item));
   };
-  console.log("r", isSideBarToggle);
+  const onDeleteHandler = (id) => {
+    dispatch(deleteTodo(id));
+  };
   return {
-    isSideBarToggle,
-    rightSideBarToggler,
+    handleRead,
+    onDeleteHandler,
   };
-};
-
-export default UseTodoList;
+}

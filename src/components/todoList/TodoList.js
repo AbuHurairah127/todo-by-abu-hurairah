@@ -1,7 +1,10 @@
 import React from "react";
-import UseTodoList from "./UseTodoList";
 import { AiOutlineStar, AiFillEdit, AiOutlineDelete } from "react-icons/ai";
+import { useSelector, useDispatch } from "react-redux";
+import UseTodoList from "./UseTodoList";
 const TodoList = (props) => {
+  const { item } = props;
+  const { handleRead, onDeleteHandler } = UseTodoList();
   return (
     <div className="mx-6 mt-3 bg-slate-200 cursor-pointer rounded-md h-14 flex flex-row items-center justify-between hover:bg-slate-300">
       <div className="flex  flex-row items-center w-full justify-between">
@@ -15,10 +18,12 @@ const TodoList = (props) => {
           />
           <div className="mx-5 inline">
             <span
-              onClick={props.optionBarToggler}
+              onClick={() => {
+                handleRead(item);
+              }}
               className="hover:underline underline-offset-2"
             >
-              {props.item}
+              {item.title}
             </span>
           </div>
         </div>
@@ -34,6 +39,7 @@ const TodoList = (props) => {
             color="#331e36"
             className="hover:fill-red-600"
             title="Delete"
+            onClick={() => onDeleteHandler(item.id)}
           />
           <AiOutlineStar
             size="20"

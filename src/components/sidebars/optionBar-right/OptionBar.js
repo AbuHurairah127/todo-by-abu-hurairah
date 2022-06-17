@@ -15,8 +15,11 @@ import {
   AiOutlineTag,
   AiOutlineClose,
 } from "react-icons/ai";
-import { useState } from "react";
-const OptionBar = (props) => {
+import UseOptionBar from "./UseOptionBar";
+import { useSelector } from "react-redux/es/exports";
+const OptionBar = () => {
+  const { closeRightBar, onDeleteHandler } = UseOptionBar();
+  const todo = useSelector((store) => store.todoReducer.todo);
   return (
     <div className=" w-1/3 h-screen fixed right-0 top-0 bg-slate-200 mt-12">
       <div>
@@ -28,7 +31,7 @@ const OptionBar = (props) => {
             id="todoCompleted"
           />
           <span className="text-lg tracking-wide cursor-none font-medium">
-            Abu Hurairah
+            {todo.title}
           </span>
           <BsStarFill
             color="#2563eb"
@@ -90,11 +93,15 @@ const OptionBar = (props) => {
           color="#000"
           className="cursor-pointer hover:stroke-blue-700"
           size="24px"
-          onClick={props.optionBarToggler}
+          onClick={closeRightBar}
         />
         <AiOutlineDelete
           size="24px"
           className="cursor-pointer hover:fill-red-600"
+          onClick={() => {
+            onDeleteHandler(todo.id);
+            closeRightBar();
+          }}
         />
       </div>
     </div>

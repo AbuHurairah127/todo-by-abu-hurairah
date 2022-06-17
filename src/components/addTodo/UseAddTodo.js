@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { v4 } from "uuid";
 import { addTodo } from "../../store/actions/todoActions";
 const UseAddTodo = () => {
   const dispatch = useDispatch();
@@ -8,6 +9,7 @@ const UseAddTodo = () => {
     title: "",
     isImp: false,
     isComp: false,
+    id: v4(),
   });
   const handleChange = (e) => {
     setTodo({ ...todo, [e.target.name]: e.target.value });
